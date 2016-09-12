@@ -98,7 +98,7 @@ def tweet_reply(api, reply, ignored, filtered):
 
     response = get_response(reply)
     if response:
-        tweet_response = "@{0}: {1}".format(reply.user.screen_name, response)
+        tweet_response = "@{0} {1}".format(reply.user.screen_name, response)
         debug_print('Retweeting [{0}] {1}'.format(reply.id, response))
         return api.update_status(tweet_response)
     else:
